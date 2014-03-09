@@ -1,8 +1,15 @@
 import java.applet.Applet;
+import java.awt.Color;
 import java.awt.Graphics;
 
 
 public class StartingPoint extends Applet implements Runnable{
+		
+	int x = 0;
+	int y = 0;
+	int dx = 2;
+	int dy = 2;
+	int radius = 20;
 		
 	@Override
 	public void init() {
@@ -21,6 +28,8 @@ public class StartingPoint extends Applet implements Runnable{
 		// TODO Auto-generated method stub
 		// thread information 
 		while (true){
+			x += dx;
+			y += dy;
 			repaint();
 			try {
 				Thread.sleep(17);
@@ -46,8 +55,8 @@ public class StartingPoint extends Applet implements Runnable{
 	
 	@Override
 	public void paint(Graphics g) {
-
-
+		g .setColor(Color.ORANGE);
+		g.fillOval(x-radius, y-radius, radius*2, radius*2);
 	}
 
 }
