@@ -1,6 +1,7 @@
 import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
 
 
 public class StartingPoint extends Applet implements Runnable{
@@ -10,10 +11,12 @@ public class StartingPoint extends Applet implements Runnable{
 	int dx = 2;
 	int dy = 2;
 	int radius = 20;
+	private Image i;
+	private Graphics doubleG;
 		
 	@Override
 	public void init() {
-
+		setSize(800, 600);
 
 	}
 	
@@ -51,6 +54,22 @@ public class StartingPoint extends Applet implements Runnable{
 	public void destroy() {
 
 
+	}
+	
+	@Override
+	public void update(Graphics g) {
+		if (i == null){
+			i = createImage(this.getSize().width, this.getSize().height);
+			doubleG = i.getGraphics();
+		}
+		
+		doubleG.setColor(getBackground());
+		doubleG.fillRect(0, 0, this.getSize().width, this.getSize().height);
+		
+		doubleG.setColor(getForeground());
+		paint(doubleG);
+		
+		g.drawImage(i, 0, 0, this);
 	}
 	
 	@Override
