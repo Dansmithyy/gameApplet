@@ -8,7 +8,7 @@ public class StartingPoint extends Applet implements Runnable{
 		
 	int x = 0;
 	int y = 0;
-	int dx = 2;
+	int dx = 4;
 	int dy = 2;
 	int radius = 20;
 	private Image i;
@@ -31,8 +31,29 @@ public class StartingPoint extends Applet implements Runnable{
 		// TODO Auto-generated method stub
 		// thread information 
 		while (true){
-			x += dx;
-			y += dy;
+			if ( x + dx > this.getWidth() -radius-1){
+				x = this.getWidth() - radius - 1;
+				dx = - dx;
+			}else if( x + dx < 0 + radius){
+				x = 0+radius;
+				dx = -dx;
+			}
+			else{
+				x += dx;
+			}
+			
+			if ( y + dy > this.getHeight() -radius-1){
+				y = this.getHeight() - radius - 1;
+				dy = - dy;
+			}else if( y + dy < 0 + radius){
+				y = 0+radius;
+				dy = -dy;
+			}
+			else{
+				y += dy;
+			}
+				
+
 			repaint();
 			try {
 				Thread.sleep(17);
