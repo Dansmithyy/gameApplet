@@ -47,7 +47,7 @@ public class StartingPoint extends Applet implements Runnable{
 			
 			if(y > this.getHeight() - radius -1){
 				y = this.getHeight() - radius -1;
-				dy *= .9;
+				dy *= energyloss;
 				dy = -dy;
 			}else{
 				//velocity formula
