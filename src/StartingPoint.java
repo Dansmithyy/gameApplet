@@ -8,13 +8,14 @@ public class StartingPoint extends Applet implements Runnable{
 		
 	int x = 0;
 	int y = 0;
-	double dx = 0;
+	double dx = 20;
 	double dy = 0;
 	int radius = 20;
 	private Image i;
 	private Graphics doubleG;
 	double gravity = 15;
 	double energyloss = .65;
+	double xFriction = .9;
 	double dt = .2;
 		
 	@Override
@@ -43,6 +44,13 @@ public class StartingPoint extends Applet implements Runnable{
 			}
 			else{
 				x += dx;
+			}
+			
+			if(y == this.getHeight()-radius-1){
+				dx *= xFriction;
+				if (Math.abs(dx) < .8){
+					dx = 0;
+				}
 			}
 			
 			if(y > this.getHeight() - radius -1){
