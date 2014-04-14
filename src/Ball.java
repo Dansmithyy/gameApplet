@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -5,7 +6,7 @@ import java.awt.Graphics;
 public class Ball {
 
 	private double gravity = 15;
-	private double energyloss = .65;
+	private double energyloss = 1;
 	private double xFriction = .9;
 	private double dt = .2;
 	private int x = 0;
@@ -22,6 +23,18 @@ public class Ball {
 		// TODO Auto-generated constructor stub
 		x = i;
 		y = j;		
+	}
+	
+	public void moveRight(){
+		if (dx+1 < 20){
+			dx += 1;
+		}
+	}
+	
+	public void moveLeft(){
+		if (dx-1 > -20){
+			dx -= 1;
+		}
 	}
 
 	public void update(StartingPoint sp){
