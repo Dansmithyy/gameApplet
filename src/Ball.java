@@ -25,6 +25,38 @@ public class Ball {
 		y = j;		
 	}
 	
+	public int getX() {
+	return x;
+	}
+	public void setX(int x) {
+		this.x = x;
+	}
+	public int getY() {
+		return y;
+	}
+	public void setY(int y) {
+		this.y = y;
+	}
+	public double getDx() {
+		return dx;
+	}
+	public double getDy() {
+		return dy;
+	}
+	public void setDx(double dx) {
+		this.dx = dx;
+	}
+	public void setDy(double dy) {
+		this.dy = dy;
+	}
+	public double getGravity() {
+		return gravity;
+	}
+	public void setGravity(double gravity) {
+		this.gravity = gravity;
+	}
+	
+	
 	public void moveRight(){
 		if (dx+1 < 20){
 			dx += 1;
