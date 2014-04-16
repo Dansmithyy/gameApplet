@@ -25,6 +25,9 @@ public class Ball {
 		y = j;		
 	}
 	
+	public int getRadius() {
+	return radius;
+	}	
 	public int getX() {
 	return x;
 	}
