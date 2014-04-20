@@ -17,6 +17,14 @@ public class Platform {
 		height = 40;
 	}
 	
+	public Platform(int x, int y){
+		this.x = x;
+		this.y = y;
+		width = 120;
+		height = 40;
+		dx = -10;
+	}
+	
 	public void update(StartingPoint sp, Ball b){
 		checkForCollision(b);
 
@@ -29,9 +37,13 @@ public class Platform {
 		int radius = b.getRadius();
 				
 		if (ballY + radius > y && ballY+radius < y + height){
-			double newDy = b.getDy() * -1;
-			b.setDy(newDy);
-		}
+			if (ballX > x && ballX < x + width){
+			
+			double newDY = b.getDy() * -1;
+			b.setY(y-radius);
+			b.setDy(newDY);
+			}
+	    }
 	}
 
 	public void paint (Graphics g){

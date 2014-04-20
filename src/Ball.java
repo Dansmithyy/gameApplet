@@ -9,8 +9,8 @@ public class Ball {
 	private double energyloss = 1;
 	private double xFriction = .9;
 	private double dt = .2;
-	private int x = 0;
-	private int y = 0;
+	private int x = 400;
+	private int y = 25;
 	private double dx = 20;
 	private double dy = 0;
 	private int radius = 20;
